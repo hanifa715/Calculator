@@ -2,8 +2,10 @@ package com.example.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,12 +19,15 @@ public class MainActivity extends AppCompatActivity {
     private Boolean isOperationClick;
 
     private String action;
+    private Button btnResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.text_view);
+        btnResult = findViewById(R.id.btnResult);
+
     }
 
 
@@ -135,11 +140,25 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Can not be divided by 0", Toast.LENGTH_SHORT).show();
             }
 
+
         }
+
+
+        btnResult.setVisibility(View.VISIBLE);
+
 
 
         isOperationClick = true;
 
 
     }
+    public void onPut2Activity(View view) {
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        String text = textView.getText().toString();
+        intent.putExtra("key1",text);
+        startActivity(intent);
+
+    }
+
+
 }

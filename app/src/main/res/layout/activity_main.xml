@@ -8,6 +8,18 @@
     tools:context=".MainActivity"
     android:id="@+id/mainActivity">
 
+    <Button
+        android:id="@+id/btnResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="onPut2Activity"
+        android:visibility="gone"
+        android:text="Result"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="16dp"
+        tools:ignore="MissingConstraints" />
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
